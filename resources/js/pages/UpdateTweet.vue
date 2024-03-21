@@ -46,20 +46,88 @@ export default {
 </script>
 
 <template>
-    <Header/>
-    <div>
-        <h1>Edit Tweet</h1>
-        <div v-if="tweet">
-            <div>
-                <label>Title:</label>
-                <input type="text" v-model="editedTweet.title" />
+    <Header />
+    <div class="container">
+        <div class="box">
+            <h1>Edit Tweet</h1>
+            <div class="inputBox" v-if="tweet">
+                <div>
+                    <label>Title:</label>
+                    <input type="text" v-model="editedTweet.title" />
+                </div>
+                <div>
+                    <label>Text:</label>
+                    <textarea rows="4" v-model="editedTweet.text"></textarea>
+                </div>
+                <button @click="updateTweet">Update Tweet</button>
             </div>
-            <div>
-                <label>Text:</label>
-                <textarea v-model="editedTweet.text"></textarea>
-            </div>
-            <button @click="updateTweet">Update</button>
         </div>
     </div>
-    <Footer/>
+    <Footer />
 </template>
+
+<style scoped>
+.container {
+    display: grid;
+    grid-template-columns: 1fr minmax(300px, 2fr) 1fr;
+    align-items: center;
+
+}
+
+.box {
+    grid-column: 2;
+}
+
+.inputBox {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 7px;
+}
+
+.inputBox div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+h1 {
+    font-size: 32px;
+    color: #222222;
+    margin-top: 150px;
+    margin-bottom: 50px;
+}
+
+label {
+    font-size: 24px;
+    color: #444444;
+}
+
+input {
+    border-radius: 4px;
+    font-size: 24px;
+    margin-bottom: 30px;
+    padding: 10px;
+    border: 1px solid #999999;
+    color: #000000;
+}
+
+textarea {
+    resize: none;
+    font-size: 24px;
+    margin-bottom: 30px;
+    padding: 10px;
+    border: 1px solid #999999;
+    border-radius: 4px;
+    color: #000000;
+}
+
+button {
+    border-radius: 10px;
+    width: 110px;
+    margin: 5px;
+    padding: 7px;
+    background-color: #1D9BF0;
+    color: #ffffff;
+    border: 1px solid #999999;
+}
+</style>

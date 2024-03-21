@@ -21,7 +21,6 @@ header {
     width: 100%;
     display: grid;
     grid-template-columns: 2fr 3fr;
-
 }
 
 h1 {
@@ -49,6 +48,7 @@ button {
     background-color: #1D9BF0;
     border-radius: 30px;
     padding: 10px;
+    border-style: solid;
 }
 
 .newTweet {

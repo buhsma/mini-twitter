@@ -56,6 +56,8 @@ export default {
 <template>
     <Header />
     <div>
+        
+
         <h1>All Tweets</h1>
         <div class="btnBox">
             <button @click="sortByNewest()">Sort by newest</button>
@@ -65,6 +67,7 @@ export default {
                 <button @click="filterTweets">Search</button>
             </div>
         </div>
+        
         <div class="container" v-if="tweets.length">
             <Tweet v-for="tweet in tweets" :key="tweet.id" :tweet="tweet" />
         </div>
@@ -73,6 +76,7 @@ export default {
             No results found.
         </div>
     </div>
+    
     <Footer />
 </template>
 
