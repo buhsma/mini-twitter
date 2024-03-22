@@ -32,16 +32,31 @@ export default {
 };
 </script>
 <template>
-    <Header/>
+    <Header />
     <div>
         <h1>My Tweets</h1>
         <router-link to="/">All Tweets</router-link>
         <div v-if="tweets">
-            <router-link v-for="tweet in tweets" :key="tweet.id"
-                :to="{ name: 'EditTweet', params: { tweetId: tweet.id } }">
-                <Tweet :tweet="tweet" />
-            </router-link>
+            <div class="container" v-if="tweets.length">
+                <Tweet v-for="tweet in tweets" :key="tweet.id" :tweet="tweet" :showBtn="true" />
+            </div>
         </div>
     </div>
-    <Footer/>
+    <Footer />
 </template>
+
+<style scoped>
+.container {
+    display: grid;
+    grid-template-columns: 1fr minmax(300px, 2fr) 1fr;
+    align-items: center;
+    gap: 20px;
+}
+
+.btnBox {
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+
+</style>
