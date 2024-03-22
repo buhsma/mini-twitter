@@ -24,6 +24,7 @@
     </div>
     <div class="g_id_signin" data-type="standard"></div>
 
+    
     <div id="app"></div>
 </body>
 </html>
