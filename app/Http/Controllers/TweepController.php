@@ -15,7 +15,7 @@ class TweepController extends Controller
             return response()->json(['error' => $response['error']], 400);
         } else {
             // Access user profile information
-            dd($response['credential']);
+            dd($response);
             $accessToken = $response['credential'];
 
             // Use the access token to retrieve user profile data
