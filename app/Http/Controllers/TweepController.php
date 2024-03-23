@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
+
 
 class TweepController extends Controller
 {
@@ -28,6 +30,7 @@ class TweepController extends Controller
                 // Extract the desired user profile information (e.g., name, email)
                 $profileData = $userData->json();
                 // Use the information as needed (e.g., store in database, return to client)
+                dd($profileData);
                 return response()->json($profileData);
             } else {
                 // Handle errors during profile data retrieval
