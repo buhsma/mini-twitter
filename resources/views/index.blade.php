@@ -20,7 +20,7 @@
          data-client_id="852116997814-lfcrnrnr0h53blov5g6nlanggpp2spmv.apps.googleusercontent.com"
 
          data-ux_mode="redirect"
-         data-login_uri="https://ynotx.ch">
+         data-login_uri="https://ynotx.ch/api/google-sign-in">
     </div>
     <div class="g_id_signin" data-type="standard"></div>
 
