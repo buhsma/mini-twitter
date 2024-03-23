@@ -8,16 +8,16 @@ class TweepController extends Controller
 {
     public function handleGoogleSignIn(Request $request)
     {
-        dd($request);
-        $response = $request->input('response');
+        // Retrieve the values of the "credential" and "g_csrf_token" parameters from the request
+        $credential = $request->input('credential');
+        $csrfToken = $request->input('g_csrf_token');
 
-        if (isset($response['error'])) {
+        if (isset($credential['error'])) {
             // Handle errors (e.g., user cancellation, network issues)
-            return response()->json(['error' => $response['error']], 400);
+            return response()->json(['error' => $credential['error']], 400);
         } else {
             // Access user profile information
-            dd($response);
-            $accessToken = $response['credential'];
+            $accessToken = $credential;
 
             // Use the access token to retrieve user profile data
             $userData = Http::withHeaders([
