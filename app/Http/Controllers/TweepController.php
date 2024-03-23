@@ -11,6 +11,7 @@ class TweepController extends Controller
     public function handleGoogleSignIn(Request $request)
     {
         // Retrieve the values of the "credential" and "g_csrf_token" parameters from the request
+        dd($request);
         $credential = $request->input('credential');
         $csrfToken = $request->input('g_csrf_token');
 
