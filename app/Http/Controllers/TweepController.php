@@ -8,6 +8,7 @@ class TweepController extends Controller
 {
     public function handleGoogleSignIn(Request $request)
     {
+        dd($request);
         $response = $request->input('response');
 
         if (isset($response['error'])) {
