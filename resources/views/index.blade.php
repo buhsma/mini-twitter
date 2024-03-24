@@ -35,9 +35,10 @@
 </div>
 
     
-    <div id="app"
-        data-user-id="{{ $userId }}"
-        data-user-name="{{ $userName }}">
-    </div>
+<div id="app"
+    data-user-id="{{ isset($userId) ? $userId : '0' }}"
+    data-user-name="{{ isset($userName) ? $userName : '0' }}">
+</div>
+
 </body>
 </html>
