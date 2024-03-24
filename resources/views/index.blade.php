@@ -35,6 +35,9 @@
 </div>
 
     
-    <div id="app"></div>
+    <div id="app"
+        data-user-id="{{ $userId }}"
+        data-user-name="{{ $userName }}">
+    </div>
 </body>
 </html>
