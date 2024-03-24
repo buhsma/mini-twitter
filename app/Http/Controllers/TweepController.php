@@ -21,9 +21,8 @@ class TweepController extends Controller
     $userId = $tokenData['sub'];
     $userName = $tokenData['name'];
 
-    // Now you can use $userId and $userName as needed
-    // For example, you can return them as JSON response
-    return view('index', ['userId' => $userId, 'userName' => $userName]);
+    return redirect('https://ynotx.ch')->with('userId', $userId)->with('userName', $userName);
+
 }
 
 }

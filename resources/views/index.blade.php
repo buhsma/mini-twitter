@@ -36,16 +36,7 @@
 
     
 <div id="app"
-    data-user-id="{{ isset($userId) ? $userId : '0' }}"
-    data-user-name="{{ isset($userName) ? $userName : '0' }}">
 </div>
 
 </body>
-<script>
-    // Perform redirection after the page is loaded
-    window.onload = function() {
-        // Redirect the user to the desired URL
-        window.location.href = 'https://ynotx.ch';
-    };
-</script>
 </html>
