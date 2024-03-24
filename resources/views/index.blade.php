@@ -15,7 +15,25 @@
     
 </head>
 <body>
-    
+    @if (!session()->has('userId') || !session()->has('userName'))
+        <script src="https://accounts.google.com/gsi/client" async defer></script>
+    @endif
+    <div id="g_id_onload"
+     data-client_id="852116997814-lfcrnrnr0h53blov5g6nlanggpp2spmv.apps.googleusercontent.com"
+     data-context="signin"
+     data-ux_mode="popup"
+     data-login_uri="https://ynotx.ch/api/google-sign-in"
+     data-nonce=""
+     data-auto_prompt="false">
+</div>
+<div class="g_id_signin"
+     data-type="standard"
+     data-shape="rectangular"
+     data-theme="filled_black"
+     data-text="continue_with"
+     data-size="large"
+     data-logo_alignment="left">
+</div>
 
     
 <div id="app"
