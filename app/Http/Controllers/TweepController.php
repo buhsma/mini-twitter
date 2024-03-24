@@ -10,7 +10,7 @@ class TweepController extends Controller
     public function handleGoogleSignIn(Request $request)
 {
     // Retrieve the token from the request
-    $token = $request->input('token');
+    $token = $request->input('credential');
 
     // Decode the token to extract information
     $tokenParts = explode('.', $token);
