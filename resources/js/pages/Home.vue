@@ -21,22 +21,21 @@ export default {
         };
     },
     mounted() {
-        if (sessionStorage.getItem('userId') && sessionStorage.getItem('userName')) {
-            // If user data is in the session, retrieve it
-            this.userId = sessionStorage.getItem('userId');
-            this.userName = sessionStorage.getItem('userName');
-            this.getAllTweets();
-        } else {
-            // If user data is not in the session, retrieve it from the Blade view
-            this.userId = document.getElementById('app').dataset.userId;
-            this.userName = document.getElementById('app').dataset.userName;
-            // Store user data in the session
-            sessionStorage.setItem('userId', this.userId);
-            sessionStorage.setItem('userName', this.userName);
-            this.getAllTweets();
-        },
+    if (sessionStorage.getItem('userId') && sessionStorage.getItem('userName')) {
+        // If user data is in the session, retrieve it
+        this.userId = sessionStorage.getItem('userId');
+        this.userName = sessionStorage.getItem('userName');
         this.getAllTweets();
-    },
+    } else {
+        // If user data is not in the session, retrieve it from the Blade view
+        this.userId = document.getElementById('app').dataset.userId;
+        this.userName = document.getElementById('app').dataset.userName;
+        // Store user data in the session
+        sessionStorage.setItem('userId', this.userId);
+        sessionStorage.setItem('userName', this.userName);
+        this.getAllTweets();
+    }
+},
     methods: {
         async getAllTweets() {
             try {
