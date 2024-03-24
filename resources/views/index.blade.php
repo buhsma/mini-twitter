@@ -41,4 +41,11 @@
 </div>
 
 </body>
+<script>
+    // Perform redirection after the page is loaded
+    window.onload = function() {
+        // Redirect the user to the desired URL
+        window.location.href = 'https://ynotx.ch';
+    };
+</script>
 </html>
