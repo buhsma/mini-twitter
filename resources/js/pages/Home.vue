@@ -15,7 +15,9 @@ export default {
         return {
             tweets: [],
             originalTweets: [],
-            searchQuery: ''
+            searchQuery: '',
+            userId: null,
+            userName: null
         };
     },
     mounted() {
