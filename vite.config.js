@@ -3,10 +3,7 @@ import laravel from "laravel-vite-plugin";
 import vue from "@vitejs/plugin-vue";
 
 export default defineConfig({
-    base: "https://www.ynotx.ch/",
-    server: {
-        cors: true,
-    },
+    
     plugins: [
         vue(),
         laravel({
