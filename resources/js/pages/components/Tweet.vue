@@ -1,5 +1,5 @@
 <script>
-import { formatDate } from "/home/petra/projects/laravel-vue-main/resources/js/tools/tools.js";
+import { formatDate } from "../js/tools/tools.js";
 export default {
   props: {
     tweet: {

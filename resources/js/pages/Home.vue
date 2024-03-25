@@ -3,7 +3,7 @@ import axios from "axios";
 import Tweet from "./components/Tweet.vue";
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
-import { sortByNewest, sortByOldest } from "/home/petra/projects/laravel-vue-main/resources/js/tools/tools.js";
+import { sortByNewest, sortByOldest } from "../js/tools/tools.js";
 
 export default {
     components: {

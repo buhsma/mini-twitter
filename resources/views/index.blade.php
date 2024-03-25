@@ -36,7 +36,7 @@
 </div>
 
     
-<div id="app"
+<div id="app">
 </div>
 
 </body>
