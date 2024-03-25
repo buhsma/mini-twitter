@@ -1,135 +1,61 @@
-# Laravel Vue
+# Mini Twitter Application
 
-Eine Vorlage für die Verwendung von Laravel mit vue.js.
+This is a mini Twitter application built using Laravel, Vue.js, and MySQL. It enables users to post tweets and view a timeline of all tweets. However, it does not currently support user authentication, following, or unfollowing functionalities.
 
-## Vorbereiten
+## Features
 
-### 1. Repository herunterladen oder Projekt selbst einrichten
+- **Tweet Creation:** Users can create new tweets.
+- **Tweet Timeline:** Users can view a timeline of all tweets posted.
 
-#### 1. Herunterladen
+## Technologies Used
 
-Lade das Repository auf Deinen Computer herunter, benenne es um und verschiebe es in Deinen Projektordner.
+- **Laravel:** Laravel is used as the backend framework for handling server-side logic, routing, and interacting with the database.
+- **Vue.js:** Vue.js is used for building the interactive user interface components.
+- **MySQL:** MySQL is the chosen relational database management system for storing tweet data.
 
-#### 2. Selber einrichten
+## Setup Instructions
 
-Wenn Du selber alles einrichten willst, um einen genaueren Überblick zu erhalten, kannst Du Dir die [Installation.md](https://github.com/opportunity-zh/laravel-vue/blob/main/Installation.md) anschauen und die Schritte selber durchgehen.
+1. **Clone the Repository:** Clone this repository to your local machine using `git clone`.
 
-### 2. Dependencies installieren
+    ```bash
+    git clone https://github.com/your-username/mini-twitter.git
+    ```
 
-#### 1. NPM Packages
+2. **Install Dependencies:** Navigate into the project directory and install PHP and JavaScript dependencies.
 
-Öffne das Projekt in VS Code, öffne das Terminal und verwende den folgedenden Befehl um alle Dependencies (Packages) zu installieren.
+    ```bash
+    cd mini-twitter
+    composer install
+    npm install
+    ```
 
-```bash
-npm install
-```
+3. **Database Setup:**
+    - Create a MySQL database for the application.
+    - Copy the `.env.example` file to `.env` and update the database configuration with your MySQL credentials.
+    - Run database migrations to create necessary tables.
 
-#### 2. Composer Packages
+    ```bash
+    php artisan migrate
+    ```
 
-Im selben Terminal kannst Du auch gleich die Composer Packages installieren, indem Du folgenden Befehl eingibst:
+4. **Start the Development Server:** Run the Laravel development server.
 
-```bash
-composer install
-```
+    ```bash
+    php artisan serve
+    ```
 
-### 3. Environment Variablen anpassen
+5. **Compile Assets:** In a separate terminal, compile the frontend assets.
 
-Nimm das **.env.example** File und benenne es um in **.env**. Wenn Du es öffnest, siehst Du, dass der **APP_KEY noch leer** ist. Mit folgendem Befehl kannst Du dir einen Key generieren, damit alles funktioniert.
+    ```bash
+    npm run dev
+    ```
 
-```bash
-php artisan key:generate
-```
+6. **Access the Application:** Open your web browser and visit `http://localhost:8000` to access the application.
 
-## Starten
+## Contributing
 
-### 1. Docker Container hochfahren
+Contributions are welcome! If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request.
 
-Wenn Du in Laravel mit Docker arbeitest, kannst du statt dem Befehl docker compose den Befehl './vendor/bin/sail up' verwenden. Evtl. ist auf Deinem Computer bereits ein alias hinzugefügt worden, deshalb kannst Du die Kurzform davon verwenden:
+## License
 
-```bash
-sail up
-```
-
-### 2. NPM Server starten
-
-```bash
-npm run dev
-```
-
-### 3. Website aufrufen
-
-Unter localhost kannst Du nun die Website anschauen.
-
-```bash
-http://localhost
-```
-
-### 4. PHPMyAdmin aufrufen
-
-Unter localhost:8080 findest Du PHPMyAdmin. Logindaten findest Du im .env File.
-
-```bash
-http://localhost:8080
-```
-
-## Fehlerbehebung
-
-### 1. Ports besetzt
-
-Das kann passieren, wenn die Ports, die Docker in den Containern benutzen will, diese jedoch vom System bereits besetzt sind.
-
-Beispielsweise: listen tcp4 0.0.0.0:80: bind: address already in use
-
-1. Prozess finden
-   Dann musst Du herausfinden, von welchem Prozess diese verwendet werden und diesen Prozess dann beenden. Das machst Du mit folgenden Befehlen. Ersetze dabei **PORT** durch den besetzten Port. Im oberen Beispiel wäre das **80**
-
-```bash
-sudo netstat -laputen | grep ':PORT'
-```
-
-2. Prozess beenden
-   Wenn Du den Prozess gefunden hast, welcher den Port besetzt, findest Du neben dem Namen des Prozesses eine Zahl, welches die **Prozess-ID** ist. Den Prozess kannst Du mit folgendem Befehl beenden. Ersetze <id> mit der tatsächlichen Prozess-ID
-
-```bash
-sudo kill <id>
-```
-
-Wenn Du das gemacht hast, verwenden zuerst den folgenden Befehl und versuche es erst dann wieder mit sail up
-
-```bash
-sail down
-```
-
-### 2. Dockerprobleme
-
-Wenn Du Probleme mit Docker bzw. noch laufenden Containern hast, kannst Du diese Container beenden und auch direkt aus dem ... löschen.
-
-Das machst Du mit folgenden Befehlen
-
-1. Alle laufenden Container beenden
-
-```bash
-docker stop $(docker ps -a -q)
-```
-
-2. Alle gestoppten Container entfernen
-
-```bash
-docker rm $(docker ps -a -q)
-```
-
-### Storage Folder Permission Problem
-
-1. Versuche sail up ohne cache zu starten
-
-```bash
-sail build --no-cache
-```
-
-Falls das nicht funktioniert, versuche die Berechtigungen des storage Ordners zu ändern. Im Projektordner:
-
-```bash
-sudo chmod -R 777 storage
-```
-# mini-twitter
-# mini-twitter
+This project is open-source and available under the [MIT License](LICENSE).
