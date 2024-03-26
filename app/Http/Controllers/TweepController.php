@@ -9,7 +9,6 @@ class TweepController extends Controller
 {
     public function handleGoogleSignIn(Request $request)
 {
-    dd($request);
     // Retrieve the token from the request
     $token = $request->input('credential');
     
@@ -21,7 +20,7 @@ class TweepController extends Controller
     // Extract the "sub" (user ID) and the user's name
     $userId = $tokenData['sub'];
     $userName = $tokenData['name'];
-
+    dd($userName);
     return redirect('https://ynotx.ch')->with('userId', $userId)->with('userName', $userName);
 
 }
