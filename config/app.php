@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://ynotx.ch'),
+    'url' => env('APP_URL', 'https://localhost'),
 
     'asset_url' => env('ASSET_URL'),
 
